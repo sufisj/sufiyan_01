@@ -1,0 +1,38 @@
+
+
+How to access Ec2 instance if .Pem file is lost
+
+
+1. firstwe need to create a 2 new instance,instance-1 and instance-2
+
+2.Delete the .pem file of instance-2 and now stop the instance-2
+
+3.Then Go to EBS volume and select the instance-2 volume,then click on Action - detach volume 
+
+4.Now again select the instance-2 volume and click on action -attach volume
+
+5.And Copy public ip of instace-1 nd paste in moba-terminal
+
+6.open moba-terminal-session -ssh-paste public ip in remote host,specify user 
+   click-advance ssh setting  add instance-1 .pem key -ok 
+
+7.type lsblk ,hvdf partetion is show there
+
+8.make directory name /var/sufiyan
+
+9.mount that directory in  xvdf1 by using cmd ( mount -o nouuid /dev/xvdf1 /var/naresh )
+
+10. check that partation by using lsblk cmd 
+
+11. type ( cat /home/ec2-user/.ssh/authorized_keys >> /var/sufiyan/home/ec2-user/.ssh/authorized_key
+
+
+12. Umount that mount directory ( umount /var/sufiyan/ ) and check by using lsblk cmd 
+
+13.Now go in instance-2 volume -action - detach volume -again go in - action - attach volume 
+   and select the instance-2 -device -/dev/xvda  
+
+14.Goto instance start the instance - copy public ip - start  mobaxterm -start session -paste public ip
+   specify user name ( ec2-user )- Advance ssh - copy instance-1 .pem file - ok
+
+15.Now you loged if u lost .pem file .
