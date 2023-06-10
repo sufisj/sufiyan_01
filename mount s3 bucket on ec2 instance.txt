@@ -1,0 +1,29 @@
+
+today task:- mount s3 bucket on ec2 instance
+
+firstly we have to normally make an instance and s3 bucket....
+
+then we have to log in cli and do configure aws 
+
+then follow the given command mentioned below 
+sudo su 
+
+amazon-linux-extras install epel -y
+
+yum install s3fs-fuse -y
+
+echo <access key>:<secrate acess key> > ${HOME}/.andy 
+
+chmod 600 ${HOME}/.andy 
+
+mkdir /rocky
+
+s3fs (bucketname) /rocky -o passwd_file=${HOME}/.andy
+
+mount | grep rocky 
+
+cd /rocky
+
+touch file {1..10}
+
+If you check the peritcular bucket in aws account the file would get upload if you delete from s3 bucket so it would delete either from cli..
