@@ -1,0 +1,44 @@
+CREATE AND ATTACH EBS VOLUME ON EC2 INSTANCE
+
+STEPS
+
+first create ec2 instance
+-then create volume
+-volume setting 
+-volume type (general purpose)
+-give size
+-availabiliyty zone
+-snapshot id
+-add tags
+-create volume           
+
+attach volume to the ec2 instance
+
+-select 
+-attach volume 
+-select instance
+-device(/dev/sdf)
+-to check 
+-df -h                     -to check disk space usage
+-lsblk                     -nothing is mounted currebtly
+-file -s /dev/xvdf   -to check if any file system is attaced
+- mkfs -t xfs /dev/xvdf -to allocate file system
+-file -s /dev/xvdf     -file system sgi xfs attached
+-mkdir /mnt/dir1 
+-pwd
+-cd /mnt/dir1
+-mount /dev/xvdf  /mnt/dir1 -mount to dir
+-df -h
+
+-then show the mounting
+
+
+check mount 
+
+-open instance
+-storage
+-block device
+-ebs volume (/dev/sdf)
+
+
+ EBS volume is mount to EC2 instance
