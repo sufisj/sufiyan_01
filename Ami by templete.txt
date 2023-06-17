@@ -1,0 +1,10 @@
+in this task we need to go to ec2 launch template os image t3.micro  keypair and subnet
+go to security group and select existing group and then launch
+go to actions and launch instance from template ---> default ---> launch template.
+
+And then go to template action select launch instance from template default value launch instance
+again instance go to  action  image and template and then create an image
+give the image name accordingly go to default and click on creat image
+And you will see ami has been created by templete
+
+

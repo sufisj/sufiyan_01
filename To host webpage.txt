@@ -1,0 +1,11 @@
+in this go to EC2 instance  launch instance with key pair
+
+firewall then allow all http traffic user data and write this code
+        #!/bin/bash
+	sudo yum update 
+	sudo yum install httpd -y
+	sudo systemctl start httpd
+	sudo systemctl enable httpd
+	sudo echo "<h1> webpage "$HOSTNAME"</h1>" > /var/www/html/index.html 
+click on  launch instance
+public ip and  paste on browser its done!!
